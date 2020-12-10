@@ -54,3 +54,58 @@ namespace ConsoleApp1
     }
 }
 ```
+
+```
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+      
+        static void Main(string[] args)
+        {
+
+            //Create List with integers
+            var nums = new List<int>() { 1, 2, 3, 4 };
+
+            //Add new int to List
+            nums.Add(1);
+
+            //Add array of int to List
+            nums.AddRange(new int[3] { 5, 6, 7 });
+
+            foreach(var n in nums)
+            Console.WriteLine(n);
+
+            //Indexof()
+            Console.WriteLine("Index: " + nums.IndexOf(1));
+
+            //Last Index
+            Console.WriteLine("Index: " + nums.LastIndexOf(1));
+
+            //Length of List
+            Console.WriteLine("Count: " + nums.Count);
+
+            //Remove from list
+            //nums.Remove(1);
+
+            for (var n=0; n< nums.Count; n++)
+            {
+                if(nums[n] == 1)
+                    nums.Remove(nums[n]);    
+            }
+            foreach (var n in nums)
+                Console.WriteLine(n);
+
+
+            //Clear()
+            nums.Clear();
+            Console.WriteLine("Count: " +nums.Count);
+        }
+    }
+}
+
+```
