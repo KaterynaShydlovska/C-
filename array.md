@@ -185,3 +185,60 @@ namespace ConsoleApp1
 }
 
 ```
+
+```
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+      
+        static void Main(string[] args)
+        {
+            var fullName = "Kateryna Shydlovska ";
+
+            //Trim()
+            Console.WriteLine("Trim: " + fullName.Trim());
+
+            //ToUpper()
+            Console.WriteLine("ToUpper: " + fullName.ToUpper());
+
+            //ToLower()
+            Console.WriteLine("ToLower: " + fullName.Trim().ToLower());
+
+            //IndexOf
+            var index = fullName.IndexOf(' ');
+            var firstName = fullName.Substring(0, index);
+            var lastName = fullName.Substring(index+1);
+            Console.WriteLine("First Name: " + firstName);
+            Console.WriteLine("Last Name: " + lastName);
+
+            //Split()
+            var name = fullName.Split(' ');
+            Console.WriteLine("First name: " + name[0]);
+            Console.WriteLine("Last name: " + name[1]);
+
+            //Replace
+            Console.WriteLine(fullName.Replace("Kateryna", "Kate"));
+
+            //Empty string
+            string str = null;
+            if (String.IsNullOrEmpty(str) || String.IsNullOrWhiteSpace(str))
+                Console.WriteLine("Invalid");
+
+            //String to num
+            string numStr = "124";
+           Console.WriteLine(Convert.ToInt32(numStr));
+
+            //Num to string
+            float price = 29.95f;
+
+            Console.WriteLine(price.ToString("C"));
+            Console.WriteLine(price.ToString("C0"));
+        }
+    }
+}
+```
