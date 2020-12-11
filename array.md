@@ -407,3 +407,44 @@ namespace ConsoleApp1
     }
 }
 ```
+
+Directory and DirectoryInfo
+
+```using System;
+
+using System.IO;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+            Directory.CreateDirectory(@"c:\temp\folder1");
+
+           var files= Directory.GetFiles(@"c:\projects\CSharpFundamentals", "*.*", SearchOption.AllDirectories);
+            //foreach (var file in files)
+                //Console.WriteLine(file);
+
+
+
+            var directories = Directory.GetDirectories(@"c:\projects\CSharpFundamental", "*.*", SearchOption.AllDirectories);
+            //foreach (var directory in directories)
+                //Console.WriteLine(directory);
+
+            Directory.Exists(@"c:\projects\CSharpFundamental");
+
+            var directoryInfo = new DirectoryInfo("...");
+            directoryInfo.GetFiles();
+            directoryInfo.GetDirectories();
+        }
+
+       
+
+
+
+    }
+}
+```
