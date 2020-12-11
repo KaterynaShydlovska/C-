@@ -448,3 +448,38 @@ namespace ConsoleApp1
     }
 }
 ```
+
+Path 
+
+```
+using System;
+
+using System.IO;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            var path = @"c:\projects\CSharpFundamentals\HelloWorld.sln";
+            var dotIndex = path.IndexOf('.');
+            var extention = path.Substring(dotIndex);
+
+            Console.WriteLine("Extention: " + Path.GetExtension(path));
+            Console.WriteLine("File name: " + Path.GetFileName(path));
+            Console.WriteLine("File name without Extension: " + Path.GetFileNameWithoutExtension(path));
+            Console.WriteLine("Directory name: " + Path.GetDirectoryName(path));
+
+        }
+
+       
+
+
+
+    }
+}
+```
