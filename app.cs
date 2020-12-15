@@ -483,6 +483,64 @@ namespace StackImplementation
   }
 }
 
+// HashTable
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+
+namespace HashTableProject
+{
+
+  public class MainClass
+  {
+    static Hashtable userInfoHash;
+   
+
+
+      public static void Main(string[] args)
+      {
+         userInfoHash = new Hashtable();
+        
+        //  Adding
+
+        for(int i =0; i< 10; i++)
+        {
+          userInfoHash.Add(i, "user" + i);
+        }
+
+        // Removing
+        if(userInfoHash.ContainsKey(0))
+        {
+          userInfoHash.Remove(0);
+        }
+
+        // Setting
+        if(userInfoHash.ContainsKey(1))
+        {
+          userInfoHash[1] = "replacementName";
+        }
+
+        // looping
+        foreach (DictionaryEntry  entry in userInfoHash)
+        {
+          Console.WriteLine("Key: " + entry.Key + "/Value: " + entry.Value);
+        }
+   
+        }
+      }
+  }
+
+
+
+
+
+
+
+
+
+
 
 
 
