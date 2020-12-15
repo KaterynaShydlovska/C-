@@ -532,6 +532,77 @@ namespace HashTableProject
       }
   }
 
+  // Dictionary
+
+  using System;
+using System.Collections;
+using System.Collections.Generic;
+
+
+namespace Demo
+{
+
+  public class Program
+  {
+  public static void Main(string[] args)
+      {
+        Customer customer1 = new Customer()
+        {
+          ID = 100,
+          Name = "Kate",
+          Salary = 6400
+        };
+
+          Customer customer2 = new Customer()
+        {
+          ID = 119,
+          Name = "Mac&Hulk",
+          Salary = 400
+        };
+
+          Customer customer3 = new Customer()
+        {
+          ID = 110,
+          Name = "Andrii",
+          Salary = 10500
+        };
+
+        Dictionary<int, Customer> dictionartCustomers = new Dictionary<int, Customer>();
+
+        dictionartCustomers.Add(customer1.ID, customer1);
+        dictionartCustomers.Add(customer2.ID, customer2);
+        dictionartCustomers.Add(customer3.ID, customer3);
+
+        Customer cust = dictionartCustomers[119];
+        // Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+
+        foreach(KeyValuePair<int, Customer> customerKeyValuePair in dictionartCustomers)
+        {
+          Console.WriteLine("ID ={0} ", customerKeyValuePair.Key);
+
+          Customer custom = customerKeyValuePair.Value;
+          Console.WriteLine("ID = {0}, Name ={1}, Salary = {2}", custom.ID, custom.Name, custom.Salary);
+          Console.WriteLine("---------------------------");
+        }
+     
+        }
+
+      }
+
+      public class Customer
+      {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+      }
+  }
+
+
+
+
+
+
+
 
 
 
