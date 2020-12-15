@@ -450,6 +450,39 @@ namespace StackImplementation
   }
 }
 
+// Queue
+
+using System;
+using System.Collections;
+
+namespace StackImplementation
+{
+
+  public class program
+  {
+
+      public static void Main(string[] args)
+      {
+        Queue myQueue = new Queue();
+        myQueue.Enqueue(1);
+        myQueue.Enqueue(2);
+        myQueue.Enqueue(3);
+        myQueue.Enqueue(4);
+
+        myQueue.Dequeue();
+        Console.WriteLine("here it is => " + myQueue.Peek());
+        Console.WriteLine("Contains 100 " + myQueue.Contains(100));
+
+        Console.WriteLine("Length is  " + myQueue.Count);
+        foreach(var num in myQueue)
+        {
+          Console.WriteLine(num);
+        }
+
+      }
+  }
+}
+
 
 
 
