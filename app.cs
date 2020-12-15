@@ -408,6 +408,49 @@ public static void Main(String []args)
 }  
 
 
+// Stack;
+
+using System;
+using System.Collections;
+
+namespace StackImplementation
+{
+
+  public class program
+  {
+
+      public static void Main(string[] args)
+      {
+          Stack myStack = new Stack();
+          myStack.Push("hello there");
+          myStack.Push(1);
+          myStack.Push(2);
+          myStack.Push(3.5);
+          // myStack.Push(null);
+          myStack.Push("End of stack");
+
+          Console.WriteLine($"Here is peak  {myStack.Peek()}");
+          Console.WriteLine("Here is length of stack =>" + myStack.Count);
+
+          myStack.Pop();
+
+          Console.WriteLine($"Here is peak  {myStack.Peek()}");
+          Console.WriteLine("Here is length of stack =>" + myStack.Count);
+          Console.WriteLine("My stack has 2 =>" + myStack.Contains(2));
+          Console.WriteLine("My stack has 3 =>" + myStack.Contains(3));
+
+          myStack.Clear();
+
+          foreach (var item in myStack)
+          {
+              Console.WriteLine(item);
+          }
+
+      }
+  }
+}
+
+
 
 
 
