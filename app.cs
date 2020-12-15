@@ -177,3 +177,78 @@ public static class Kata
     return (on + wait) - cap;
   }
 }
+
+
+// Linked Kist
+
+using Sysytem;
+using Sysytem.Collections.Generic;
+using Sysytem.Linq;
+using Sysytem.Text;
+using Sysytem.Treading.Tasks;
+
+namespace DataStructureAndAlgorithms.LinkedList
+{
+  //  This class represents a node in the linked list
+  public class Node 
+  {
+   public object data = null;
+   public Node next = null;
+
+   public Node(object data, Node next=null)
+   {
+     data = data;
+     next = next;
+   }
+  }
+  // this class will have the logic
+  // to connect the node objects to create
+  // link list structure
+  public class LinkedList
+  {
+    Node head = null;
+    public void AddLast(object data)
+    {
+       Node newItem = new Node(data);
+       if(head == null)
+       {  
+        head = newItem;
+        head.next = null;
+       }
+       else
+       {
+           Node runner = head;
+             while(runner.next)
+             {
+               runner = runner.next;
+             }
+             runner.next = newItem;
+            
+
+           
+       }
+    }
+    public void AddFirst(object data)
+    {
+        Node newItem = new Node(data);
+       if(head == null)
+       {
+        head = newItem;
+       }
+       else
+       {
+         Node oldHead = head;
+         head = newItem;
+         head.next = oldHead;
+       }
+    }
+
+    public void ReadAll()
+    {
+
+    }
+  }
+}
+{
+    
+}
