@@ -134,6 +134,45 @@ public class Kata
   }
 }
 
+// As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+
+// The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+
+// For example:
+
+// gimme([2, 3, 1]) => 0
+// 2 is the number that fits between 1 and 3 and the index of 2 in the input array is 0.
+
+// Another example (just to make sure it is clear):
+
+// gimme([5, 10, 14]) => 1
+// 10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
+
+
+using System;
+public class Kata
+{
+  public static int Gimme(double[] inputArray)
+  {
+      double one = inputArray[0];
+      double two = inputArray[1];
+      double three = inputArray[2];
+      if((one > two && one < three) || (one > three && one < two))
+      {
+          return 0;
+      }
+      if((two > one && two < three) || (two < one && two > three))
+      {
+          return 1;
+      }
+      if((three > one && three < two) || (three < one && three > two))
+      {    
+          return 2;
+      }    
+      return 0;
+  }
+}
+
 // Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
 
 // The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
