@@ -226,8 +226,27 @@ using Sysytem.Linq;
 using Sysytem.Text;
 using Sysytem.Treading.Tasks;
 
+using System;
+
+
+
 namespace DataStructureAndAlgorithms.LinkedList
 {
+
+  class MainClass {
+  public static void Main (string[] args) {
+    
+    SimpleLinkedList list = new SimpleLinkedList();
+    list.AddLast("kate");
+    list.AddLast("hulk");
+    list.AddFirst("mac");
+    list.AddLast("andrii");
+    list.AddLast(22);
+    list.ReadAll();
+    list.Reverse();
+    list.ReadAll();
+  }
+}
   //  This class represents a node in the linked list
   public class Node 
   {
@@ -236,16 +255,17 @@ namespace DataStructureAndAlgorithms.LinkedList
 
    public Node(object data, Node next=null)
    {
-     data = data;
-     next = next;
+     this.data = data;
+     this.next = next;
    }
   }
   // this class will have the logic
   // to connect the node objects to create
   // link list structure
-  public class LinkedList
+  public class SimpleLinkedList
   {
     Node head = null;
+
     public void AddLast(object data)
     {
        Node newItem = new Node(data);
@@ -257,19 +277,16 @@ namespace DataStructureAndAlgorithms.LinkedList
        else
        {
            Node runner = head;
-             while(runner.next)
+             while(runner.next != null)
              {
                runner = runner.next;
              }
-             runner.next = newItem;
-            
-
-           
+             runner.next = newItem;      
        }
     }
     public void AddFirst(object data)
     {
-        Node newItem = new Node(data);
+       Node newItem = new Node(data);
        if(head == null)
        {
         head = newItem;
@@ -284,10 +301,32 @@ namespace DataStructureAndAlgorithms.LinkedList
 
     public void ReadAll()
     {
+        Node current = head;
 
+        while(current != null)
+        {
+          Console.WriteLine(current.data);
+          current = current.next;
+          
+        }
     }
-  }
+
+    public void Reverse()
+ {
+     Node cur = head;
+     Node next = null;
+     while (cur != null) {
+     Node tmp = cur.next;
+     cur.next = next;
+     next = cur;
+     cur = tmp;
 }
-{
-    
+     head = next;           
+   }
+ }
 }
+
+
+
+
+
