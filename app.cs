@@ -710,8 +710,37 @@ namespace Demo
       }
   }
 
-
-
+// Codewars Bar recommends you drink 1 glass of water per standard drink so you're not hungover tomorrow morning.
+// Your fellow coders have bought you several drinks tonight in the form of a string. Return a string suggesting how many glasses of water you should drink to not be hungover.
+// Examples
+// "1 beer"  -->  "1 glass of water"
+// because you drank one standard drink
+// "1 shot, 5 beers, 2 shots, 1 glass of wine, 1 beer"  -->  "10 glasses of water"
+// because you drank ten standard drinks
+using System;
+public class Drinkin
+{
+    public string hydrate(string drinkString)
+    {
+     int sum = 0;
+     int j = 0;
+      string[] arr = drinkString.Split(' ');
+      for(int i=0; i< arr.Length; i++ )
+        {
+        bool result = int.TryParse(arr[i], out j);
+        if(result == true)
+          {
+          sum+= j;
+        }
+      }
+      if(sum == 1)
+        {
+        return $"{sum} glass of water";
+      }
+      else{
+        return $"{sum} glasses of water";
+      }
+      
 
 
 
