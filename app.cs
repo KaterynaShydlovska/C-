@@ -534,9 +534,13 @@ namespace HashTableProject
 
   // Dictionary
 
-  using System;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+
+
 
 
 namespace Demo
@@ -568,14 +572,37 @@ namespace Demo
         };
 
         Dictionary<int, Customer> dictionartCustomers = new Dictionary<int, Customer>();
-
+      // Adding
         dictionartCustomers.Add(customer1.ID, customer1);
         dictionartCustomers.Add(customer2.ID, customer2);
         dictionartCustomers.Add(customer3.ID, customer3);
 
-        Customer cust = dictionartCustomers[119];
-        // Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+      // method TryGetValue()
+        Customer existCust;
+        if(dictionartCustomers.TryGetValue(111, out existCust))
+        {
+          Console.WriteLine("ID ={0}, Name = {1}, Salary = {2}", existCust.ID, existCust.Name, existCust.Salary);
+        }
+        else{
+          Console.WriteLine("The key is not foud");
+        }
 
+        // Count
+
+        Console.WriteLine("total items = {0} ", dictionartCustomers.Count);
+        //or
+        Console.WriteLine("total items = {0} ", dictionartCustomers.Count(kvp => kvp.Value.Salary > 4000));
+       
+       //Remove one  or all 
+        dictionartCustomers.Remove(100);
+         Console.WriteLine("total items = {0} ", dictionartCustomers.Count);
+
+        //  dictionartCustomers.Clear();
+
+
+        Customer cust = dictionartCustomers[119];
+        Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+      //foeach may use var also
         foreach(KeyValuePair<int, Customer> customerKeyValuePair in dictionartCustomers)
         {
           Console.WriteLine("ID ={0} ", customerKeyValuePair.Key);
@@ -583,6 +610,22 @@ namespace Demo
           Customer custom = customerKeyValuePair.Value;
           Console.WriteLine("ID = {0}, Name ={1}, Salary = {2}", custom.ID, custom.Name, custom.Salary);
           Console.WriteLine("---------------------------");
+        }
+
+
+        //Contains() method
+        if(!dictionartCustomers.ContainsKey(customer1.ID))
+        {
+             dictionartCustomers.Add(customer1.ID, customer3);
+        }
+
+        if(dictionartCustomers.ContainsKey(129))
+        {
+          Console.WriteLine("Here");
+        }
+        else
+        {
+           Console.WriteLine("not found");
         }
      
         }
@@ -596,6 +639,11 @@ namespace Demo
         public int Salary { get; set; }
       }
   }
+
+
+
+
+
 
 
 
