@@ -641,7 +641,7 @@ namespace Demo
   }
 
 
-// Coverting array to Dictinary
+// Coverting array to Dictionary
 
 using System;
 using System.Collections;
@@ -675,7 +675,14 @@ namespace Demo
           Name = "Andrii",
           Salary = 10500
         };
+       
+       // List to Dictionary
+        // List<Customer> customers = new List<Customer>();
+        // customers.Add(customer1);
+        // customers.Add(customer2);
+        // customers.Add(customer3);
 
+        //Array to dictionary
         Customer[] customers = new Customer[3];
         customers[0] = customer1;
         customers[1] = customer2;
