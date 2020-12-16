@@ -641,6 +641,74 @@ namespace Demo
   }
 
 
+// Coverting array to Dictinary
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Demo
+{
+
+  public class Program
+  {
+  public static void Main(string[] args)
+      {
+        Customer customer1 = new Customer()
+        {
+          ID = 100,
+          Name = "Kate",
+          Salary = 6400
+        };
+
+          Customer customer2 = new Customer()
+        {
+          ID = 119,
+          Name = "Mac&Hulk",
+          Salary = 400
+        };
+
+          Customer customer3 = new Customer()
+        {
+          ID = 110,
+          Name = "Andrii",
+          Salary = 10500
+        };
+
+        Customer[] customers = new Customer[3];
+        customers[0] = customer1;
+        customers[1] = customer2;
+        customers[2] = customer3;
+
+       Dictionary<int, Customer> dict = customers.ToDictionary(cust => cust.ID, cust => cust);
+
+       foreach(KeyValuePair<int, Customer> kvp in dict)
+       {
+         Console.WriteLine("Key ={0}", kvp.Key);
+         Customer cust = kvp.Value;
+          Console.WriteLine("ID ={0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+
+       }
+
+    }
+
+  }
+
+      public class Customer
+      {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+      }
+  }
+
+
+
+
+
+
+
 
 
 
