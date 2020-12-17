@@ -782,6 +782,31 @@ public static class Kata
   }
 }
 
+// Given an array of integers , Find the maximum product obtained from multiplying 2 adjacent numbers in the array.
+using System;
+public class Kata
+{
+    public static int AdjacentElementsProduct(int[] array)
+    {
+        int mult = array[0] * array[1];
+      
+      int i=0;
+      int j =i+1; 
+       
+      while(j < array.Length)
+        {
+        int temp = array[i] * array[j];
+        if(temp > mult)
+          {
+          mult = temp;
+        }
+        i++;
+        j++;
+      }
+          Console.WriteLine(mult);  
+      return mult;
+    }
+}
 
 
 
