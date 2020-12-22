@@ -1,4 +1,71 @@
 using System;
+// Hello World
+class HelloWorld {
+  public static void Main (string[] args) {
+    Console.WriteLine ("Hello World");
+  
+
+
+// Comments
+// 1. Single Comments
+
+/* 2. multi-Line
+comment block
+*/
+
+/// <summary>
+/// 3.XML doc comment
+/// </summary>
+
+
+// Variables
+
+bool boollian = true;
+Console.WriteLine(boollian);
+int n = 2;
+Console.WriteLine(n);
+double m = 2.5;
+Console.WriteLine(m);
+char a = 'a';
+Console.WriteLine(a);
+string s = "string";
+Console.WriteLine(s);
+
+// Min/Max values
+
+int minVal = Int32.MinValue;
+Console.WriteLine(minVal);
+int maxVal = Int32.MaxValue;
+Console.WriteLine(maxVal+1);
+
+//Implicit types
+
+var trueOrFalse = false;
+var num = 20;
+var doubleNum = 30.45;
+var character  =  'b';
+var str = "string...";
+
+//Operators
+
+int x =5;
+int y =23;
+
+int z1 = x++;
+int z2 = ++y;
+Console.WriteLine("x = " + x);
+Console.WriteLine("y = " + y);
+Console.WriteLine("z1 = " + z1);
+Console.WriteLine("z2 = " + z2);
+
+
+
+  }
+}
+
+///////
+
+using System;
 
 class MainClass {
   public static void Main (string[] args) {
@@ -99,4 +166,4 @@ Console.WriteLine($"RESULT: {result}");
  }
 }
 
-/////////////////////git
+/////////////////////
