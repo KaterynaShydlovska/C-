@@ -1058,6 +1058,54 @@ public static class Kata
     }
   }
 
+//   Write a function that can return the smallest value of an array or the index of that value. The function's 2nd parameter will tell whether it should return the value or the index.
+
+// Assume the first parameter will always be an array filled with at least 1 number and no duplicates. Assume the second parameter will be a string holding one of two values: 'value' and 'index'.
+
+// min([1,2,3,4,5], 'value') // => 1
+// min([1,2,3,4,5], 'index') // => 0
+
+using System;
+
+public class Kata
+{
+  public static int FindSmallest(int[] numbers, string toReturn)
+  {
+    
+    int min = numbers[0];
+    int minIndex =0;
+    
+    for(var i =0; i< numbers.Length; i++)
+      {
+      if(min > numbers[i])
+        {
+        min = numbers[i];
+      }    
+    }
+    
+    bool notFound = false;
+    int j =0;
+    while(!notFound)
+      {
+      if(numbers[j] == min)
+        {
+        notFound = true;
+        minIndex = j;
+      }
+      j++;
+    }
+   
+    
+    if(toReturn == "index")
+      {
+      return minIndex;
+    }
+    else
+      {
+      return min;
+    }    
+  }
+    
 
 
 
