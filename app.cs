@@ -1138,6 +1138,48 @@ public static class Kata
 }
 
 
+// Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
+
+// Documentation:
+// Kata.ToBinary Method (Int32)
+// Returns the binary representation of a non-negative integer as an integer.
+// Parameters
+// n
+// Type: System.Int32
+// The integer to convert.
+
+// Return Value
+// Type: System.Int32
+// The binary representation of the argument as an integer.
+// to_binary(1)  /* should return 1 */
+// to_binary(5)  /* should return 101 */
+// to_binary(11) /* should return 1011 */
+
+using System;
+
+public static class Kata
+{
+  public static int ToBinary(int n)
+  {
+     string binary = Binary(n);
+    return Int32.Parse(binary);
+  }
+
+
+    public static string Binary(int x)
+    {
+        char[] buff = new char[32];
+ 
+        for (int i = 31; i >= 0 ; i--) {
+            int mask = 1 << i;
+            buff[31 - i] = (x & mask) != 0 ? '1' : '0';
+        }
+ 
+        return new string(buff);
+    }
+ 
+
+
 
 
 
