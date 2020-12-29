@@ -313,3 +313,29 @@ class MainClass {
     return isFound;
   }
 }
+
+/////
+using System;
+using System.Text;
+
+class MainClass {
+  public static void Main (string[] args) {
+    Console.WriteLine ("Hello World");
+    string str = "123";
+    Console.WriteLine(ReverseString(str));
+
+  }
+
+  public static string ReverseString(string str)
+  {
+    string res = "";
+    // char n;
+
+   for(var i = str.Length-1; i>=0; i--)
+   {
+   
+    res+=str[i];
+   }
+   return res;
+  }
+}
