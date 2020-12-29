@@ -338,4 +338,12 @@ class MainClass {
    }
    return res;
   }
+
+  public static string RecursiveReverseString(string str)
+  {
+    if (str.Length > 0)
+      return str[str.Length - 1] + RecursiveReverseString(str.Substring(0, str.Length - 1));
+    else
+      return str;
+  }
 }
