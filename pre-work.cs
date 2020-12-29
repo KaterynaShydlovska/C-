@@ -247,7 +247,48 @@ class GFG
 		printArrayList(getPermutation(str)); 
 	} 
 } 
-//
+// same soution with loops
+
+using System;
+using System.Collections.Generic; 
+
+class MainClass {
+  public static void Main (string[] args) {
+     string hat = "12345";
+     getPermutation(hat);
+  }
+
+ 
+
+  public static void getPermutation(string hat)
+  {
+            
+            for( var i = 0; i < hat.Length; i++)
+            {
+                for(var j = 0; j < hat.Length; j++)
+                {
+                    for(var z = 0; z < hat.Length; z++)
+                    {
+                        for (var a = 0; a < hat.Length; a++)
+                        {
+                            for (var b = 0; b < hat.Length; b++)
+                            {
+                                if (i != j && i != z && i != a && i != b && j != z && j != a && j != b && z != a && z != b && a != b)
+                                {
+                                    Console.WriteLine($"{hat[i]}{hat[j]}{hat[z]}{hat[a]}{hat[b]}");
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+ 
+    }
+  }
+}
+
+///
 
 using System;
 
