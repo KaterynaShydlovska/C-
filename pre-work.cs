@@ -247,3 +247,28 @@ class GFG
 		printArrayList(getPermutation(str)); 
 	} 
 } 
+//
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    Console.WriteLine (IsFirstCharRepeated("heh"));
+  }
+
+  public static bool IsFirstCharRepeated(String str)
+  {
+    bool isFound = false;
+
+    char l = str[0];
+
+    for(int i =1; i< str.Length; i++)
+    {
+      if(str[i] == l)
+      {
+        isFound = true;
+      }
+    }
+    return isFound;
+  }
+}
