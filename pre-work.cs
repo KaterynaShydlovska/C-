@@ -347,3 +347,39 @@ class MainClass {
       return str;
   }
 }
+
+//////
+using System;
+using System.Text;
+
+class MainClass {
+  public static void Main (string[] args) {
+  
+    int min =3;
+    int max =6;
+    Console.WriteLine(GetSumBetweenNumbers(min, max));
+  
+  }
+  public static int GetSumBetweenNumbers(int min , int max)
+  {
+    int sum =0;
+    
+    int runner = min;
+    while(runner <= max )
+    {
+    sum+=runner;
+    runner+=1;
+    }
+    return sum;
+  }
+
+    public static int RecGetSumBetweenNum(int min , int max)
+  {
+   if(min == max)
+   {
+     return min;
+   }
+   return min + RecGetSumBetweenNum(min +1, max);
+  }
+    
+}
