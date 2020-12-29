@@ -418,3 +418,29 @@ class MainClass {
   }
     
 }
+
+///////
+using System;
+using System.Collections.Generic;
+
+class MainClass {
+  public static void Main (string[] args) {
+   
+  List <int> l = new List<int>() {1,2,3,4,5};
+  Console.WriteLine(MultiplyList(l));
+  
+  }
+
+  public static int MultiplyList(List<int> l )
+  {
+    int mult=1;
+
+    for(var i=0; i< l.Count; i++)
+    {
+      mult *= l[i];
+    }
+    return mult;
+  }
+ 
+    
+}
