@@ -165,3 +165,115 @@ namespace Trees.Classes
         }
     }
 }
+
+
+//////////////////////////////////////////////////////////////
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) 
+  {
+    Console.WriteLine ("Hello World");
+   BinarySearchTree nums = new BinarySearchTree();
+    nums.Insert(23);
+    nums.Insert(45);
+    nums.Insert(16);
+    nums.Insert(37);
+    nums.Insert(3);
+    nums.Insert(99);
+    nums.Insert(22);
+    Console.WriteLine("Inorder traversal: ");
+    nums.InOrder(nums.root);
+    Console.WriteLine("\n ");
+    Console.WriteLine("Preorder traversal: ");
+    nums.PreOrder(nums.root);
+    Console.WriteLine("\n");
+    Console.WriteLine("Postorder traversal: ");
+    nums.PostOrder(nums.root);
+        
+  }
+
+  public class Node 
+  {
+public int Data;
+public Node Left;
+public Node Right;
+
+public void DisplayNode() 
+{
+  Console.Write(Data + " ");
+ }
+}
+
+
+public class BinarySearchTree 
+{
+  public Node root;
+  public BinarySearchTree()
+   {
+  root = null;
+}
+
+   public void Insert(int i)
+  {
+      Node newNode = new Node();
+      newNode.Data = i;
+      if (root == null)
+      {
+          root = newNode;
+      }
+      else
+      {
+          Node current = root;
+          Node parent;
+          while (true) 
+          {
+              parent = current;
+              if (i < current.Data) 
+              {
+                  current = current.Left;
+                  if (current == null) 
+                  {
+                      parent.Left = newNode;
+                      break;
+                  }
+                  }
+                  else {
+                  current = current.Right;
+                if (current == null) 
+                {
+                  parent.Right = newNode;
+                break;
+              }
+            }
+          }
+        }
+      }
+  public void InOrder(Node theRoot) {
+  if (!(theRoot == null)) {
+      InOrder(theRoot.Left);
+      theRoot.DisplayNode();
+      InOrder(theRoot.Right);
+     }
+    }
+
+  public void PreOrder(Node theRoot) {
+  if (!(theRoot == null)) {
+    theRoot.DisplayNode();
+    PreOrder(theRoot.Left);
+    PreOrder(theRoot.Right);
+     }
+    }
+
+  public void PostOrder(Node theRoot) {
+  if (!(theRoot == null)) {
+    PostOrder(theRoot.Left);
+    PostOrder(theRoot.Right);
+    theRoot.DisplayNode();
+     }
+   }
+
+  }
+
+}
