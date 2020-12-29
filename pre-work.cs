@@ -173,3 +173,77 @@ Console.WriteLine("Invoice: 1021\t\tComplete!");
 Console.WriteLine("Invoice: 1022\t\tComplete!");
 Console.WriteLine("\nOutput Directory:\t");
 
+/////
+using System.Collections.Generic; 
+using System; 
+
+class GFG 
+{ 
+
+	// Utility function to print the contents 
+	// of the ArrayList 
+	static void printArrayList(List<String> arrL) 
+	{ 
+		arrL.Remove(""); 
+		for (int i = 0; i < arrL.Count; i++) 
+			Console.Write(arrL[i] + " "); 
+	} 
+
+	// Function to returns the arraylist which contains 
+	// all the permutation of str 
+	public static List<String> getPermutation(String str) 
+	{ 
+
+		// If string is empty 
+		if (str.Length == 0) 
+		{ 
+
+			// Return an empty arraylist 
+			List<String> empty = new List<String>(); 
+			empty.Add(""); 
+			return empty; 
+		} 
+
+		// Take first character of str 
+		char ch = str[0]; 
+
+		// Take sub-string starting from the 
+		// second character 
+		String subStr = str.Substring(1); 
+
+		// Recurvise call 
+		List<String> prevResult = getPermutation(subStr); 
+
+		// Store the generated permutations 
+		// into the resultant arraylist 
+		List<String> Res = new List<String>(); 
+
+		foreach (String val in prevResult) 
+		{ 
+			for (int i = 0; i <= val.Length; i++) 
+			{ 
+				Res.Add(val.Substring(0, i) + ch + val.Substring(i)); 
+			} 
+		} 
+
+		// Return the resultant arraylist 
+		return Res; 
+	} 
+
+	// Driver code 
+	public static void Main(String[] args) 
+	{ 
+
+
+    List <int> l = new List<int> {1,2,3,4,5};
+    String str = ""; 
+    for(var i=0; i< l.Count; i++)
+    {
+     str += l[i];
+    }
+
+		
+    Console.WriteLine(str);
+		printArrayList(getPermutation(str)); 
+	} 
+} 
