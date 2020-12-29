@@ -441,6 +441,15 @@ class MainClass {
     }
     return mult;
   }
+
+   public static int RecMultiplyList(List<int> l, int i=0 )
+  {
+    if(i == l.Count-1)
+    {
+      return l[i];
+    }
+    return l[i] * RecMultiplyList(l, i+1);
+  }
  
     
 }
