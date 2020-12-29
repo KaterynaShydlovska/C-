@@ -406,5 +406,15 @@ class MainClass {
     }
    return res;
   }
+
+   public static int RecXToTheYPowe(int x, int y)
+  {
+    if(y == 1)
+    {
+     return x;
+    }
+    return x * RecXToTheYPowe(x, y-1);
+
+  }
     
 }
