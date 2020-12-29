@@ -329,11 +329,9 @@ class MainClass {
   public static string ReverseString(string str)
   {
     string res = "";
-    // char n;
 
    for(var i = str.Length-1; i>=0; i--)
    {
-   
     res+=str[i];
    }
    return res;
@@ -380,6 +378,33 @@ class MainClass {
      return min;
    }
    return min + RecGetSumBetweenNum(min +1, max);
+  }
+    
+}
+
+//////
+using System;
+using System.Text;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int x = 3;
+    int y = 4;
+    Console.WriteLine(XToTheYPowe(x,y));
+  
+   
+  
+  }
+  public static int XToTheYPowe(int x, int y)
+  {
+   int res =1;
+    while(y > 0)
+    {
+      res *=x;
+      y--;
+      Console.WriteLine(res);
+    }
+   return res;
   }
     
 }
