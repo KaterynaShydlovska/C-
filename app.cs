@@ -1313,6 +1313,111 @@ namespace ArrayMaxResult
     }
 }
 
+////
+//Calculator
+
+using System;
+
+namespace Calculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+         bool displayMenu = true;
+         while(displayMenu)
+         {
+           displayMenu = MainMenu();
+         }
+        }
+
+        private static bool MainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter two numbers you would like to work with below.");
+            Console.Write("Number One: ");
+            decimal a = Decimal.Parse(Console.ReadLine());
+            Console.Write("Number Two: ");
+            decimal b = Decimal.Parse(Console.ReadLine());
+            Console.WriteLine("");
+
+            Console.Clear();
+            Console.WriteLine("You entered {0} and {1}.", a, b);
+            Console.WriteLine("");
+
+            Console.WriteLine("Choose which function to run:");
+            Console.WriteLine("1) Addition");
+            Console.WriteLine("2) Subtraction");
+            Console.WriteLine("3) Multiplication");
+            Console.WriteLine("4) Division");
+            Console.WriteLine("");
+            Console.Write("Function: ");
+            string result = Console.ReadLine();
+
+            if (result == "1")
+            {
+                Console.Clear();
+                Console.WriteLine("{0} + {1} = {2}", a, b, Add(a, b));
+                Console.WriteLine("");
+                Console.WriteLine("Press 'Enter' to end the calculator.");
+                Console.ReadLine();
+                return false;
+            }
+            else if (result == "2")
+            {
+                Console.Clear();
+                Console.WriteLine("{0} - {1} = {2}", a, b, Subtract(a, b));
+                Console.WriteLine("");
+                Console.WriteLine("Please press 'Enter' to end the calculator.");
+                Console.ReadLine();
+                return false;
+            }
+            else if (result == "3")
+            {
+                Console.Clear();
+                Console.WriteLine("{0} * {1} = {2}", a, b, Mult(a, b));
+                Console.WriteLine("");
+                Console.WriteLine("Press 'Enter' to end the calculator.");
+                Console.ReadLine();
+                return false;
+            }
+            else if (result == "4")
+            {
+                Console.Clear();
+                Console.WriteLine("{0} / {1} = {2}", a, b, Divide(a, b));
+                Console.WriteLine("");
+                Console.WriteLine("Press 'Enter' to end the calculator.");
+                Console.ReadLine();
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private static decimal Add(decimal a, decimal b)
+        {
+         return a + b;
+        }
+
+         private static decimal Subtract(decimal a, decimal b)
+        {
+          return a - b;
+        }
+
+         private static decimal Mult(decimal a, decimal b)
+        {
+          return a * b;
+        }
+
+         private static decimal Divide(decimal a, decimal b)
+        {
+          return a / b;
+        }
+    }
+}
+
 
 
 
