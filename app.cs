@@ -1200,6 +1200,120 @@ public class Kata
   }
 }
 
+////
+// Problem 1: Array Max Result
+// Problem Statement
+// Given an array select a number that exists, and output the computated “score”. The method you create should take in both an array of integers and the integer the user selected.
+
+// Create a Console application that requests 5 numbers between 1-10 from the user. Output the array to the console and ask the user to select a number. After the selection, output the “score” of the number chosen.
+
+// Selection and Scoring Algorithm
+// You can select any number from the list, however your scoring will be depend on the frequency of that number in the list. E.g for [2,2,3,5,4] if you pick 2 your score will be 4 (2 * 2) but if you pick 5 your score will be 5 (5 * 1)
+
+// Input Format
+// An array of integers, and the number chosen.
+
+// Sample Input
+// [6,4,4,1,3] , 4
+
+// Sample Output
+// 8
+
+using System;
+
+namespace ArrayMaxResult
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = new int[5];
+            
+            int counter = 0;
+            while (counter < 5)
+            {
+                counter = GetNumbers(counter, numbers);
+            }
+
+            ShowResult(numbers);
+        }
+
+        private static int GetNumbers(int counter, int[] numbers)
+        {
+            Console.Clear();
+            Console.Write("Please choose a number between 1 to 10. Same number can be chosen multiple times. ({0}/5): ", counter);
+            string numberInput = Console.ReadLine();
+            
+            if (int.TryParse(numberInput, out int number) && 0 < number && number < 10)
+            {
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    if (numbers[i] == 0)
+                    {
+                        numbers[i] = number;
+                        break;
+                    }
+                }
+                counter++;
+
+                if (counter < 5)
+                {
+                    Console.Clear();
+                    Console.WriteLine("You have entered '{0}'. Press 'Enter' to choose another number. ({1}/5).", number, counter);
+                    Console.ReadLine();
+                    return counter;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("You have entered '{0}'. Press 'Enter' to continue. ({1}/5).", number, counter);
+                    Console.ReadLine();
+                    return counter;
+                }
+            }
+            else
+            {
+                Console.WriteLine("That was an invalid entry. Press 'Enter' to try again.");
+                Console.ReadLine();
+                return counter;
+            }
+        }
+
+        private static void ShowResult(int[] numbers)
+        {
+            Console.Clear();
+            Console.Write("You have entered [" + string.Join(", ", numbers) + "]. Please select a number from the list for a score: ");
+            int selectedNumber = int.Parse(Console.ReadLine());
+
+            int score = 0;
+            while(score ==0)
+            {
+                for(var i=0; i< numbers.Length; i++)
+                {
+                  if(numbers[i] == selectedNumber)
+                  {
+                    score+=1;
+                  }
+                
+                }
+                score = score* selectedNumber;
+
+                if (score != 0)
+                {
+                    Console.WriteLine("Your score is {0}", score);
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.Write("That was an invalid entry. Please select a number from [" + string.Join(", ", numbers) + "] for a score: ");
+                    selectedNumber = int.Parse(Console.ReadLine());
+                }
+            }
+        }
+    }
+}
+
+
 
 
 
