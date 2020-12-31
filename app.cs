@@ -1445,6 +1445,65 @@ public static class Kata
     }
 }
 
+///
+// A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+
+// Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+
+using System;
+using System.Collections.Generic;
+
+public static class Kata
+{
+ public static bool IsPangram(string str)
+  {
+    string newStr = str.ToLower().Replace(" ", "").Replace(".", "");
+    bool found = true;
+    Console.WriteLine(newStr);
+    Dictionary<char, bool> d = new Dictionary<char, bool>();
+   d.Add('a', true);
+   d.Add('b', true);
+   d.Add('c', true);
+   d.Add('d', true);
+   d.Add('e', true);
+   d.Add('f', true);
+   d.Add('g', true); 
+   d.Add('h', true);
+   d.Add('i', true);
+   d.Add('j', true);
+   d.Add('k', true);
+   d.Add('l', true);
+   d.Add('m', true);
+   d.Add('n', true);
+   d.Add('o', true);
+   d.Add('p', true);
+   d.Add('q', true);
+   d.Add('r', true);
+   d.Add('s', true);
+   d.Add('t', true);
+   d.Add('u', true);
+   d.Add('v', true);
+   d.Add('w', true);
+   d.Add('x', true);
+   d.Add('y', true);
+   d.Add('z', true);
+    
+    for(var i=0; i< newStr.Length; i++)
+      {
+        Console.WriteLine(d.ContainsKey(newStr[i]));
+      if(d.ContainsKey(newStr[i]))
+        {
+        d.Remove(newStr[i]);
+      }
+    }
+      if(d.Count > 0)
+      {
+        found =false;
+      }
+       return found;
+  }
+}
+
 
 
 
